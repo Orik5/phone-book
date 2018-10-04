@@ -8,25 +8,37 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-@Entity
 @Getter
 @Setter
+@ToString
+@Entity
+
 @Table(name = "user")
 public class User {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "user_id", nullable = false)
   private long id;
-  @Column()
+  @Column(name = "login", nullable = false)
   private String login;
+  @Column(name = "password", nullable = false)
   private String password;
+  @Column(name = "first_name", nullable = false)
   private String firstName;
+  @Column(name = "surname", nullable = false)
   private String surname;
+  @Column(name = "middle_name", nullable = false)
   private String middleName;
+  @Column(name = "email", nullable = true)
   private String email;
+  @Column(name = "mobile_phone", nullable = false)
   private String mobilePhone;
+  @Column(name = "home_phone", nullable = true)
   private String homePhone;
+  @Column()
   private String address;
 
   public User(String login, String password, String firstName, String surname,
