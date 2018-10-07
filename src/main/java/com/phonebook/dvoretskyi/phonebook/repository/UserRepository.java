@@ -1,11 +1,11 @@
-package com.phonebook.dvoretskyi.phonebook.dao;
+package com.phonebook.dvoretskyi.phonebook.repository;
 
 import com.phonebook.dvoretskyi.phonebook.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserDao extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
 /*
   User findById(long id);
