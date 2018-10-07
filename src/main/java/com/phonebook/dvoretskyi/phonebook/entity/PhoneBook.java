@@ -6,11 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 
 @Getter
 @Setter
@@ -27,7 +27,16 @@ public class PhoneBook {
   @Column(name = "phone_book_name", nullable = false)
   private String name;
 
+  @Column
+  @OneToMany
   private List<User> userList;
 
+  public PhoneBook(String name,
+      List<User> userList) {
+    this.name = name;
+    this.userList = userList;
+  }
 
+  public PhoneBook() {
+  }
 }
