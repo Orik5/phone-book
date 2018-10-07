@@ -38,7 +38,7 @@ public class User {
   private String mobilePhone;
   @Column(name = "home_phone", nullable = true)
   private String homePhone;
-  @Column()
+  @Column(name = "address",nullable = false)
   private String address;
 
   public User(String login, String password, String firstName, String surname,
